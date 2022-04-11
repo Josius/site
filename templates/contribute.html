@@ -1,0 +1,40 @@
+{% extends './parents/main.html' %}
+
+{% block content %}
+<div class="column">
+    <h3>Login</h3>
+    <br>
+    <ol>
+        <form action="{{ url_for('login') }}" method="POST">
+            {{ login_form.csrf_token }}
+            {{ login_form.email.label }}
+            {{ login_form.email }}<br>
+            {{ login_form.password.label }}
+            {{ login_form.password }}<br>
+            <input type="submit" value="Acessar">
+        </form>
+    </ol>
+    <div id="forgotten">Esqueci minha senha</div>
+</div>
+<div class="column">
+    <h3>Cadastre-se</h3>
+    <p>
+    <ol>
+        <form action="{{ url_for('signup') }}" method="POST">
+            {{ sign_up_form.csrf_token }}
+            {{ sign_up_form.name.label }}
+            {{ sign_up_form.name }}<br>
+            {{ sign_up_form.surname.label }}
+            {{ sign_up_form.surname }}<br>
+            {{ sign_up_form.email.label }}
+            {{ sign_up_form.email }}<br>
+            {{ sign_up_form.password.label }}
+            {{ sign_up_form.password }}<br>
+            {{ sign_up_form.password2.label }}
+            {{ sign_up_form.password2 }}<br>
+            <input type="submit" value="Cadastrar">
+        </form>
+    </ol>
+</div>
+<p>ATENÇÃO: a plataforma está em estágios iniciais de desenvolvimento, recomenda-se utilizar senhas diferentes das de costume</p>
+{% endblock %}

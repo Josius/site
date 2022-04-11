@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xml:lang="EN" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css')}}">
+		
+		<script src="{{url_for('static', filename='ZoomifyImageViewerEnterprise-min.js')}}"></script>
+		
+	</head>
+
+	<body class="overflow-y">
+    
+		<header class="cabecalho flex-container">
+			<div>
+				<a href="./">
+					página inicial
+				</a>
+			</div>
+            <div>
+				<a href="./browse">
+					página navegar
+				</a>
+			</div>
+			<div>
+				Guia Histológico {{ current_year }}
+			</div>
+			<div>alguma outra funcionalidade</div>
+        </header>
+	
+		<section class="flex-container flex-direction">	
+            {% block content %} {% endblock %}
+        </section>
+
+	</body>
+
+</html>
